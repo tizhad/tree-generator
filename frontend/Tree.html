@@ -96,6 +96,17 @@
 
 <script>
     const rootElement = document.querySelector('.tree');
+    const BASE_URL = 'http://localhost:3000';
+
+    async function getTreeData() {
+        const root = [];
+        const response = await fetch(`${BASE_URL}/trees`);
+        const jsonData = await response.json();
+        if (jsonData) {
+            root.push(jsonData);
+            genAllSelectBoxes(root[0], rootElement)
+        }
+    }
 
     function genAllSelectBoxes(root, rootElement) {
         if (root.nodes.length === 0) {
@@ -176,7 +187,8 @@
         }
     }
 
-    genAllSelectBoxes(root, rootElement);
+    getTreeData();
+    // genAllSelectBoxes(root, rootElement);
 </script>
 </body>
 </html>
