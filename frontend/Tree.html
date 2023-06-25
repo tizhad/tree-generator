@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <style>
+        .tree,
+        .tree ul,
+        .tree li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .tree {
+            margin: 0 0 1em;
+            text-align: center;
+        }
+
+        .tree,
+        .tree ul {
+            display: table;
+        }
+
+        .tree ul {
+            width: 100%;
+        }
+
+        .tree li {
+            display: table-cell;
+            padding: 0.5em 0;
+            vertical-align: top;
+        }
+
+        .tree li:before {
+            outline: solid 1px #666;
+            content: "";
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .tree li:first-child:before {
+            left: 50%;
+        }
+
+        .tree li:last-child:before {
+            right: 50%;
+        }
+
+        .tree code,
+        .tree select {
+            border: solid 0.1em #666;
+            border-radius: 0.2em;
+            display: inline-block;
+            margin: 0 0.2em 0.5em;
+            padding: 0.2em 0.5em;
+            position: relative;
+        }
+
+        .tree ul:before,
+        .tree code:before,
+        .tree select:before {
+            outline: solid 1px #666;
+            content: "";
+            height: 0.5em;
+            left: 50%;
+            position: absolute;
+        }
+
+        .tree ul:before {
+            top: -0.5em;
+        }
+
+        .tree code:before,
+        .tree select:before {
+            top: -0.55em;
+        }
+
+        .tree > li {
+            margin-top: 0;
+        }
+
+        .tree > li:before,
+        .tree > li:after,
+        .tree > li > code:before,
+        .tree > li > select:before {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<ul class="tree"></ul>
+
+<script>
+    const root = {
+        id: 1,
+        name: 'ROOT',
+        nodes: [
+            {
+                id: 2,
+                name: 'Root child 1',
+                nodes: [
+                    {
+                        id: 3,
+                        name: 'Creams',
+                        nodes: [
+                            {
+                                name: 'Creams child',
+                                id: 4,
+                                nodes: [
+                                    {
+                                        name: 'Creams grand child',
+                                        id: 5,
+                                        nodes: [],
+                                    },
+                                    {
+                                        name: 'Creams another grand child',
+                                        id: 6,
+                                        nodes: [],
+                                    },
+                                ],
+                            },
+                            {
+                                name: 'Creams another Child',
+                                id: 7,
+                                nodes: [
+                                    {
+                                        name: 'Creams another grand Child',
+                                        id: 8,
+                                        nodes: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        id: 9,
+                        name: 'Cosmetics',
+                        nodes: [
+                            {
+                                name: 'Cosmetics child',
+                                id: 10,
+                                nodes: [
+                                    {
+                                        name: 'Cosmetics grand child ',
+                                        id: 11,
+                                        nodes: [
+                                            {
+                                                name: 'Cosmetics g grand grand child',
+                                                id: 12,
+                                                nodes: [],
+                                            },
+                                            {
+                                                name: 'Cosmetics g grand grand child',
+                                                id: 13,
+                                                nodes: [],
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        name: 'Cosmetics another grand child ',
+                                        id: 14,
+                                        nodes: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            // {
+            //   id: 2,
+            //   name: "Clothes",
+            //   nodes: [
+            //     {
+            //       id: 1,
+            //       name: "Dress",
+            //       nodes: [
+            //         {
+            //           name: "Zara",
+            //           id: 2,
+            //           nodes: [
+            //             {
+            //               name: "Party",
+            //               id: 2,
+            //               nodes: [],
+            //             },
+            //             {
+            //               name: "Interview",
+            //               id: 12,
+            //               nodes: [],
+            //             },
+            //             {
+            //               name: "Date",
+            //               id: 20,
+            //               nodes: [],
+            //             },
+            //           ],
+            //         },
+            //         {
+            //           name: "Mango",
+            //           id: 1,
+            //           nodes: [
+            //             {
+            //               name: "Coats",
+            //               id: 2,
+            //               nodes: [],
+            //             },
+            //             {
+            //               name: "Interview",
+            //               id: 12,
+            //               nodes: [],
+            //             },
+            //             {
+            //               name: "Date",
+            //               id: 20,
+            //               nodes: [],
+            //             },
+            //           ],
+            //         },
+            //       ],
+            //     },
+            //     {
+            //       id: 2,
+            //       name: "Top & T-shirts",
+            //       nodes: [
+            //         {
+            //           id: 1,
+            //           name: "Tops",
+            //           nodes: [
+            //             {
+            //               name: "Casual",
+            //               id: 1,
+            //               nodes: [],
+            //             },
+            //           ],
+            //         },
+            //         {
+            //           name: "T-Shirts",
+            //           id: 2,
+            //           nodes: [
+            //             {
+            //               name: "Outdoor Walk",
+            //               id: 2,
+            //               nodes: [],
+            //             },
+            //           ],
+            //         },
+            //       ],
+            //     },
+            //   ],
+            // },
+            // {
+            //   id: 3,
+            //   name: "Accessories",
+            //   nodes: [
+            //     {
+            //       id: 1,
+            //       name: "Sun Glasses",
+            //       nodes: [
+            //         {
+            //           name: "Gucci",
+            //           id: 1,
+            //           nodes: [
+            //             {
+            //               name: "Red Glass",
+            //               id: 2,
+            //               nodes: [],
+            //             },
+            //             {
+            //               name: "White Glass",
+            //               id: 1,
+            //               nodes: [],
+            //             },
+            //           ],
+            //         },
+            //         {
+            //           name: "Hermes",
+            //           id: 2,
+            //           nodes: [
+            //             {
+            //               name: "Bag",
+            //               id: 2,
+            //               nodes: [],
+            //             },
+            //           ],
+            //         },
+            //       ],
+            //     },
+            //     {
+            //       id: 2,
+            //       name: "Bags",
+            //       nodes: [
+            //         {
+            //           name: "Backpack",
+            //           id: 2,
+            //           nodes: [
+            //             {
+            //               name: "Zipper",
+            //               id: 2,
+            //               nodes: [
+            //                 {
+            //                   name: "School",
+            //                   id: 2,
+            //                   nodes: [],
+            //                 },
+            //                 {
+            //                   name: "Work",
+            //                   id: 11,
+            //                   nodes: [],
+            //                 },
+            //               ],
+            //             },
+            //           ],
+            //         },
+            //       ],
+            //     },
+            //   ],
+            // },
+        ],
+    };
+
+    const rootElement = document.querySelector('.tree');
+
+    function genAllSelectBoxes(root, rootElement) {
+        if (root.nodes.length === 0) {
+            return;
+        }
+        const li = document.createElement('li');
+        li.setAttribute('id', root.id)
+        const newSelect = document.createElement('select');
+        newSelect.addEventListener('change', (event) =>
+                handleOptionSelection(newSelect, event)
+        );
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.text = 'Select an item';
+        defaultOption.selected = true;
+        defaultOption.hidden = true;
+        if (root.nodes.length > 1) {
+            newSelect.appendChild(defaultOption);
+        }
+
+        li.appendChild(newSelect);
+        rootElement.appendChild(li);
+
+        let ul = document.createElement('ul');
+        li.appendChild(ul);
+
+        for (let i = 0; i < root.nodes.length; i++) {
+            const node = root.nodes[i];
+            const option = document.createElement('option');
+            option.value = node.id;
+            option.text = node.name;
+            newSelect.appendChild(option);
+            genAllSelectBoxes(node, ul);
+        }
+    }
+
+    function handleOptionSelection(selectedElement, event) {
+        const selectElement = event.target;
+        const selectedID = selectElement.value
+        const parentLi = selectElement.parentNode
+
+        // reset all select
+        document.querySelectorAll('select').forEach(function (el) {
+            el.disabled = false
+        })
+
+        traverseUp(parentLi, selectedID)
+    }
+
+    function traverseUp(li, selectedID) {
+        if (li === undefined || li.tagName !== 'LI') {
+            return
+        }
+        const elementID = li.getAttribute('id')
+        const parentUL = li.parentNode
+        const childUL = li.querySelector('ul')
+        hideIncompatibles(childUL, selectedID)
+        traverseUp(parentUL.parentNode, elementID)
+    }
+
+    function hideIncompatibles(ul, id) {
+        if (ul === undefined || ul === null || ul.tagName !== 'UL') {
+            return
+        }
+
+        for (const child of ul.children) {
+            const childID = child.getAttribute('id')
+            if (childID === id) {
+                continue
+            }
+            const select = child.querySelector('select')
+            if (select === null) {
+                continue
+            }
+            select.disabled = true;
+            const childUL = child.querySelector('ul')
+            hideIncompatibles(childUL, id)
+        }
+    }
+
+    genAllSelectBoxes(root, rootElement);
+</script>
+</body>
+</html>
