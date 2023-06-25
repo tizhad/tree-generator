@@ -4,8 +4,7 @@ const root = [];
 
 getTreeData().then(data => {
     root.push(data)
-    }
-)
+})
 
 function genAllSelectBoxes(root, rootElement) {
     if (root.nodes.length === 0) {
@@ -83,5 +82,3 @@ function hideIncompatibles(ul, id) {
         hideIncompatibles(childUL, id)
     }
 }
-
-getTreeData().then();
