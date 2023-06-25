@@ -7,32 +7,32 @@
       "name": "Beauty",
       "nodes": [
         {
-          "id": 1,
+          "id": 5,
           "name": "Creams",
           "nodes": [
             {
-              "name": "Shiseido",
-              "id": 1,
+              "name": "Brands",
+              "id": 15,
               "nodes": [
                 {
-                  "name": "Night Creams ",
-                  "id": 2,
+                  "name": "TACHA",
+                  "id": 12,
                   "nodes": []
                 },
                 {
-                  "name": "Day Creams ",
-                  "id": 1,
+                  "name": "Quadali",
+                  "id": 13,
                   "nodes": []
                 }
               ]
             },
             {
-              "name": "Hermes",
-              "id": 2,
+              "name": "Night Creams",
+              "id": 19,
               "nodes": [
                 {
-                  "name": "Sun Protector",
-                  "id": 2,
+                  "name": "Oily Skins",
+                  "id": 33,
                   "nodes": []
                 }
               ]
@@ -40,32 +40,32 @@
           ]
         },
         {
-          "id": 2,
+          "id": 40,
           "name": "Cosmetics",
           "nodes": [
             {
               "name": "Cliniq",
-              "id": 2,
+              "id": 41,
               "nodes": [
                 {
                   "name": "Night Creams ",
-                  "id": 2,
+                  "id": 42,
                   "nodes": [
                     {
                       "name": "Dry Skin ",
-                      "id": 2,
+                      "id": 43,
                       "nodes": []
                     },
                     {
                       "name": "Oily Skin ",
-                      "id": 11,
+                      "id": 44,
                       "nodes": []
                     }
                   ]
                 },
                 {
                   "name": "Day Cream ",
-                  "id": 5,
+                  "id": 45,
                   "nodes": []
                 }
               ]
@@ -155,73 +155,7 @@
           ]
         }
       ]
-    },
-    {
-      "id": 3,
-      "name": "Accessories",
-      "nodes": [
-        {
-          "id": 1,
-          "name": "Sun Glasses",
-          "nodes": [
-            {
-              "name": "Gucci",
-              "id": 1,
-              "nodes": [
-                {
-                  "name": "Red Glass",
-                  "id": 2,
-                  "nodes": []
-                },
-                {
-                  "name": "White Glass",
-                  "id": 1,
-                  "nodes": []
-                }
-              ]
-            },
-            {
-              "name": "Hermes",
-              "id": 2,
-              "nodes": [
-                {
-                  "name": "Bag",
-                  "id": 2,
-                  "nodes": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "name": "Bags",
-          "nodes": [
-            {
-              "name": "Backpack",
-              "id": 2,
-              "nodes": [
-                {
-                  "name": "Zipper",
-                  "id": 2,
-                  "nodes": [
-                    {
-                      "name": "School",
-                      "id": 2,
-                      "nodes": []
-                    },
-                    {
-                      "name": "Work",
-                      "id": 11,
-                      "nodes": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
     }
   ]
 }
+
