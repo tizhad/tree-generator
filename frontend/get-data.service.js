@@ -1,3 +1,5 @@
+const BASE_URL = 'http://localhost:3000/trees';
+
 async function getTreeData() {
     const root = [];
 
@@ -13,7 +15,6 @@ async function getTreeData() {
             genAllSelectBoxes(root[0], rootElement)
         })
         .catch(error => {
-            // Display error message
             console.error(error.message);
         });
 }

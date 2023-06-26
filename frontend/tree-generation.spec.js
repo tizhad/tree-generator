@@ -1,17 +1,23 @@
-const genAllTrees = require("./tree-generator");
-const { test, expect } = require("jest");
+const {test, expect, spyOn, describe, beforeEach} = require('jest');
+const { genAllSelectBoxes, handleOptionSelection } = require('./tree-generator');
+const { getTreeData } = require('./get-data.service');
 
-test("Should call genAllSelectBoxes function with data", () => {
-    // Mock the root and rootElement variables
-    const root = { nodes: [] };
-    const rootElement = document.createElement("div");
+describe('tree generation tests', () => {
+    let rootElement;
 
-    // Spy on the genAllSelectBoxes function
-    const genAllSelectBoxesSpy = jest.spyOn(genAllTrees, "genAllSelectBoxes");
+    beforeEach(() => {
+        rootElement = document.createElement('li');
+        document.body.appendChild(rootElement);
+    });
 
-    // Call the function that should trigger genAllSelectBoxes
-    genAllTrees.genAllSelectBoxes(root, rootElement);
+    test('Should call genAllSelectBoxes function with data', async () => {
+        const root = {id: 'root', name: 'test', nodes: []};
+        const genAllSelectBoxesSpy = spyOn(window, 'genAllSelectBoxes');
+        await getTreeData();
 
-    // Expect the function to have been called
-    expect(genAllSelectBoxesSpy).toHaveBeenCalled();
+        genAllSelectBoxes(root, rootElement);
+
+        expect(genAllSelectBoxesSpy).toHaveBeenCalled();
+    });
 });
+

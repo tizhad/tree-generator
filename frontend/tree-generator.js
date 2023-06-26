@@ -1,5 +1,4 @@
 const rootElement = document.querySelector('.tree');
-const BASE_URL = 'http://localhost:3000/trees';
 const root = [];
 
 getTreeData().then(data => {
