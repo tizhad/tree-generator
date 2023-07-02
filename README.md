@@ -27,7 +27,7 @@ The Tree Generator is a simple application designed to display and interact with
    node index.js
    ```
 
-4. For seeing the UI, enter into the frontend directory, open the Tree.htm then click on your favourite browser in the top right side of the file.
+4. You can see the UI by opening the Tree.html file in the frontend directory, then clicking on your favorite browser in the top right corner.
 
 ## Usage
 
