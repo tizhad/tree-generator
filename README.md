@@ -41,7 +41,7 @@ The Tree Generator is a simple application designed to display and interact with
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/your-username/tree-generator).
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/tizhad/tree-generator).
 
 ## License
 
