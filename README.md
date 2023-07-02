@@ -22,12 +22,12 @@ The Tree Generator is a simple application designed to display and interact with
    npm install
    ```
 
-3. Start the application:
-   ```shell
-   npm start
+3. Start backend 
+```shell
+   node index.js
    ```
 
-4. Open your browser and visit `http://localhost:3000` to access the Tree Generator application.
+4. For seeing the UI, enter into the frontend directory, open the Tree.htm then click on your favourite browser in the top right side of the file.
 
 ## Usage
 
